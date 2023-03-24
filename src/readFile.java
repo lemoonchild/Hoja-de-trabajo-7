@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
+
 
 public class readFile{
 
@@ -55,9 +55,11 @@ public class readFile{
         ArrayList<String> wordsToTrad = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String line;
+            String line = ""; 
+
             while ((line = br.readLine()) != null) {
-                String[] wordsLine = line.split(" ");
+                line = line.replace(".", "");
+                String[] wordsLine = line.split("");
                 wordsToTrad.addAll(Arrays.asList(wordsLine));
                 System.out.println("\t¡Se ha leído la oración a traducir con éxito!");
             }
@@ -67,18 +69,5 @@ public class readFile{
 
         return wordsToTrad;
 
-    }
-    public void printDictionary(HashMap<String, ArrayList<String>> dictionary) {
-        for (Map.Entry<String, ArrayList<String>> entry : dictionary.entrySet()) {
-            String word = entry.getKey();
-            ArrayList<String> translations = entry.getValue();
-            System.out.print("\t" + word + ": ");
-            for (String translation : translations) {
-                System.out.print(translation + ", ");
-            }
-            System.out.println();
-        }
-    }
-    
-
+    }    
 }

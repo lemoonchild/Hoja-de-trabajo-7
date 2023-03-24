@@ -1,7 +1,10 @@
 package BinaryTree;
+
+import java.util.ArrayList;
+
 /**
- * @author MAAG
- *
+ * @author MAAG - Sección 10 
+ * @URL https://github.com/malonso-uvg/uvg2023ed10.git
  */
 public class TreeNode<K, V> {
 
@@ -12,8 +15,8 @@ public class TreeNode<K, V> {
 	private TreeNode<K,V> right;
 	private TreeNode<K,V> parent;
 	
-	public TreeNode(K _key, V _value) {
-		setKey(_key);
+	public TreeNode(K k, V _value) {
+		setKey(k);
 		setValue(_value);
 		setLeft(null);
 		setRight(null);

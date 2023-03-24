@@ -2,8 +2,9 @@ package BinaryTree;
 import java.util.Comparator;
 
 /**
- * @author MAAG
- *
+ * @author MAAG - Sección 10 
+ * @URL https://github.com/malonso-uvg/uvg2023ed10.git 
+ * Binary Search Tree
  */
 public class BinarySearchTree<K, V> {
 
@@ -431,14 +432,7 @@ public class BinarySearchTree<K, V> {
 						return tempValue;
 						
 						
-					}
-					
-					
-					
-					
-					
-					
-					
+					}	
 					
 				}
 				
