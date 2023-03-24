@@ -4,44 +4,52 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class readFile{
 
-    public HashMap<String, ArrayList<String>> readDictionary(String path){
-        
+    public HashMap<String, ArrayList<String>> readDictionary(String path) {
         HashMap<String, ArrayList<String>> diccionario = new HashMap<>();
-        
+    
         try (BufferedReader buffreader = new BufferedReader(new FileReader(path))) {
+
             String words;
-
+    
             while ((words = buffreader.readLine()) != null) {
-                String[] firstENWord = words.split(":");
-                String firstWord = firstENWord[0];
-                String[] trad = firstENWord[1].split(",");
-                
-                if (diccionario.containsKey(firstWord)) {
-                    ArrayList<String> dictionaryList = diccionario.get(firstWord);
-
-                    for (String t : trad) {
-                        dictionaryList.add(t.trim());
+                // Separar la palabra en español y sus traducciones en español y francés
+                String[] wordAndTranslations = words.split(":");
+                // Verificar si la línea tiene el formato esperado
+                if (wordAndTranslations.length != 2) {
+                    System.out.println("La línea no tiene el formato esperado: " + words);
+                    continue;
+                }
+                String enWord = wordAndTranslations[0];
+                String[] translations = wordAndTranslations[1].split(",");
+    
+                // Si ya existe la palabra en el diccionario, añadir las traducciones a la lista existente
+                if (diccionario.containsKey(enWord)) {
+                    ArrayList<String> translationList = diccionario.get(enWord);
+                    for (String translation : translations) {
+                        translationList.add(translation.trim());
                     }
-
-                } else {
-                    ArrayList<String> dictionaryList = new ArrayList<>();
-
-                    for (String t : trad) {
-                        dictionaryList.add(t.trim());
+                }
+                // Si no existe la palabra, crear una nueva lista y añadir las traducciones
+                else {
+                    ArrayList<String> translationList = new ArrayList<>();
+                    for (String translation : translations) {
+                        translationList.add(translation.trim());
                     }
-
-                    diccionario.put(firstWord, dictionaryList);
+                    diccionario.put(enWord, translationList);
                 }
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
+        
 
         return diccionario;
-
+        
     }
     public ArrayList<String> readUITXT(String path){
         ArrayList<String> wordsToTrad = new ArrayList<>();
@@ -51,20 +59,26 @@ public class readFile{
             while ((line = br.readLine()) != null) {
                 String[] wordsLine = line.split(" ");
                 wordsToTrad.addAll(Arrays.asList(wordsLine));
-
+                System.out.println("\t¡Se ha leído la oración a traducir con éxito!");
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
 
-        for (String palabra : wordsToTrad) {
-            System.out.println(palabra);
-        }
-
         return wordsToTrad;
 
-
-
     }
+    public void printDictionary(HashMap<String, ArrayList<String>> dictionary) {
+        for (Map.Entry<String, ArrayList<String>> entry : dictionary.entrySet()) {
+            String word = entry.getKey();
+            ArrayList<String> translations = entry.getValue();
+            System.out.print("\t" + word + ": ");
+            for (String translation : translations) {
+                System.out.print(translation + ", ");
+            }
+            System.out.println();
+        }
+    }
+    
 
 }
