@@ -59,7 +59,7 @@ public class readFile{
 
             while ((line = br.readLine()) != null) {
                 line = line.replace(".", "");
-                String[] wordsLine = line.split("");
+                String[] wordsLine = line.split(" ");
                 wordsToTrad.addAll(Arrays.asList(wordsLine));
                 System.out.println("\t¡Se ha leído la oración a traducir con éxito!");
             }
