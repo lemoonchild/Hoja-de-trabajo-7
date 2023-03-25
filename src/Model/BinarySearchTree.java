@@ -1,4 +1,4 @@
-package BinaryTree;
+package Model;
 import java.util.Comparator;
 
 /**

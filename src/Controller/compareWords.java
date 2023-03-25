@@ -1,3 +1,4 @@
+package Controller;
 import java.util.Comparator;
 
 public class compareWords implements Comparator<String>{

@@ -1,7 +1,8 @@
+package Controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import BinaryTree.BinarySearchTree;
+import Model.BinarySearchTree;
 
 public class controllerDictionary {
     

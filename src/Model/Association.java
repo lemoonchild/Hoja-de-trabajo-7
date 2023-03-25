@@ -1,3 +1,4 @@
+package Model;
 public class Association<K extends Comparable<K>, V> {
 
     private K key;

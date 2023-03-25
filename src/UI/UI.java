@@ -1,4 +1,8 @@
+package UI;
 import java.util.Scanner;
+
+import Controller.controllerDictionary;
+import Controller.readFile;
 
 public class UI{
 
@@ -13,10 +17,10 @@ public class UI{
         System.out.println("\n¡Bienvenido al diccionario Español-Ingles-Frances!");
         System.out.println("\t Se está realizando la lectura de los archivos, espera un momento...");
     
-        String userFile = "src\\userFile.txt";  
-        String dictionaryENG = "src\\dictionaryENG.txt";
-        String dictionaryFR = "src\\dictionaryFR.txt";
-        String dictionarySP = "src\\dictionarySP.txt";
+        String userFile = "src\\txt\\userFile.txt";  
+        String dictionaryENG = "src\\txt\\dictionaryENG.txt";
+        String dictionaryFR = "src\\txt\\dictionaryFR.txt";
+        String dictionarySP = "src\\txt\\dictionarySP.txt";
 
         System.out.println("\n¿Cómo desea traducir su oración?");
 
