@@ -1,14 +1,9 @@
 package tests;
 
 import Controller.compareWords;
-import Controller.controllerDictionary;
 import Controller.extractMainWord;
-import Controller.readFile;
 import Model.BinarySearchTree;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
