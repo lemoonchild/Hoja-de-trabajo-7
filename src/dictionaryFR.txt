@@ -1,0 +1,7 @@
+loger:casa,house
+chien:perro,dog
+devoirs:tarea,homework
+femme:mujer,woman
+oui:si,yes
+merci:gracias,thanks
+

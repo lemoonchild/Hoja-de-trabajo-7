@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 import BinaryTree.BinarySearchTree;
 
 public class controllerDictionary {
@@ -38,46 +36,37 @@ public class controllerDictionary {
             case 3: 
                 for (String word : dictionary.keySet()) {
 
-                    ArrayList<String> keyWords = dictionary.get(word); 
-                    String spWord = keyWords.get(0); 
-                    String engWord = mainWord.getKeyFromValue(spWord);
-
-                    bstree.insert(spWord, engWord);
+                    ArrayList<String> valueword = dictionary.get(word);
+                    String enWord = valueword.get(0); 
+                    bstree.insert(word, enWord);
                     
                 }
                 return bstree; 
             case 4: 
                 for (String word : dictionary.keySet()) {
 
-                    ArrayList<String> keyWords = dictionary.get(word); 
-                    String spWord = keyWords.get(0); 
-                    String frenchWord = keyWords.get(1);
-
-                    bstree.insert(spWord, frenchWord);
+                    ArrayList<String> valueword = dictionary.get(word);
+                    String fWord = valueword.get(1); 
+                    bstree.insert(word, fWord);
                     
                 }
                 return bstree;  
             case 5: 
                 for (String word : dictionary.keySet()) {
 
-                    ArrayList<String> keyWords = dictionary.get(word); 
-                    String frenchWord = keyWords.get(1); 
-                    String spanWord = keyWords.get(0); 
-
-                    bstree.insert(frenchWord, spanWord);
+                    ArrayList<String> valueword = dictionary.get(word);
+                    String spWord = valueword.get(0); 
+                    bstree.insert(word, spWord);
                     
                 }
                 return bstree; 
             case 6: 
                 for (String word : dictionary.keySet()) {
 
-                    ArrayList<String> keyWords = dictionary.get(word); 
-                    String fRWord = keyWords.get(1); 
-                    String ENWord = mainWord.getKeyFromValue(fRWord);
-
-                    bstree.insert(fRWord, ENWord);
- 
-        
+                    ArrayList<String> valueword = dictionary.get(word);
+                    String enWord = valueword.get(1); 
+                    bstree.insert(word, enWord);
+                    
                 }
                 return bstree; 
 
@@ -101,6 +90,7 @@ public class controllerDictionary {
                     newUserInput.set(i, tradWord); // Actualizar el valor original en userInput
     
             } else { //no lo encontró
+                
                 word = "*"+ word +"*";
                     newUserInput.set(i, word);
             }
@@ -112,7 +102,7 @@ public class controllerDictionary {
             result += element + " ";
         }
 
-        System.out.println(result);
+        System.out.println("\tOracion traducida: " + result + "\n");
 
     }
 }

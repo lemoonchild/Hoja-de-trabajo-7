@@ -61,7 +61,6 @@ public class readFile{
                 line = line.replace(".", "");
                 String[] wordsLine = line.split(" ");
                 wordsToTrad.addAll(Arrays.asList(wordsLine));
-                System.out.println("\t¡Se ha leído la oración a traducir con éxito!");
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());

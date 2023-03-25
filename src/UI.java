@@ -12,9 +12,11 @@ public class UI{
     static public void menuReadFile(){
         System.out.println("\n¡Bienvenido al diccionario Español-Ingles-Frances!");
         System.out.println("\t Se está realizando la lectura de los archivos, espera un momento...");
-        //lectura del txt de diccionario y el txt de oracion por traducir 
-        String userFile = "C:\\Users\\ncast\\OneDrive\\Documentos\\Universidad\\Semestres\\Tercer Semestre\\Algoritmos y Estructura de Datos\\Hojas de Trabajo\\Hoja-de-trabajo-7\\src\\userFile.txt";  
-        String dictionary = "C:\\Users\\ncast\\OneDrive\\Documentos\\Universidad\\Semestres\\Tercer Semestre\\Algoritmos y Estructura de Datos\\Hojas de Trabajo\\Hoja-de-trabajo-7\\src\\dictionary.txt";
+    
+        String userFile = "src\\userFile.txt";  
+        String dictionaryENG = "src\\dictionaryENG.txt";
+        String dictionaryFR = "src\\dictionaryFR.txt";
+        String dictionarySP = "src\\dictionarySP.txt";
 
         System.out.println("\n¿Cómo desea traducir su oración?");
 
@@ -30,22 +32,23 @@ public class UI{
         switch(op){
 
             case 1: 
-                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionary), op));
+                
+                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionaryENG), op));
                 break; 
             case 2: 
-                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionary), op));
+                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionaryENG), op));
                 break; 
             case 3: 
-                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionary), op));
+                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionarySP), op));
                 break; 
             case 4: 
-                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionary), op));
+                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionarySP), op));
                 break; 
             case 5: 
-                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionary), op));
+                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionaryFR), op));
                 break; 
             case 6: 
-                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionary), op));
+                cDicc.lookForWord(readFile.readUITXT(userFile), cDicc.addToBST(readFile.readDictionary(dictionaryFR), op));
                 break; 
 
             default: 
