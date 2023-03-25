@@ -1,5 +1,10 @@
 package Model;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author MAAG - Sección 10 
@@ -26,6 +31,23 @@ public class BinarySearchTree<K, V> {
 		isEmpty = true;
 		count = 0;
 	}
+	
+    /**
+	 * Imprime el arbol binario en orden alfabetico
+     * @param hashMap 
+     */
+    public void printInOrder(HashMap<String, ArrayList<String>> hashMap) {
+
+		List<Map.Entry<String, ArrayList<String>>> lista = new ArrayList<>(hashMap.entrySet());
+
+        Collections.sort(lista, Comparator.comparing(Map.Entry::getKey));
+
+        for (Map.Entry<String, ArrayList<String>> entry : lista) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
+    }
+
 	
 	/**
 	Adds the specified value to the tree

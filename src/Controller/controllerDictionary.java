@@ -9,6 +9,12 @@ public class controllerDictionary {
     compareWords compare = new compareWords(); 
     extractMainWord mainWord = new extractMainWord<>(); 
 
+    /**
+     * Metodo para añadir los datos al arbol de busqueda binaria 
+     * @param dictionary Arraylist de elementos guardados en diccionario 
+     * @param op Opcion de usuario 
+     * @return arbol binario con elementos del diccionario 
+     */
     public BinarySearchTree addToBST(HashMap<String, ArrayList<String>> dictionary, int op){       
 
         BinarySearchTree bstree = new BinarySearchTree(compare,mainWord);
@@ -79,7 +85,12 @@ public class controllerDictionary {
         return null; 
 
     }
-    public void lookForWord(ArrayList<String> userInput, BinarySearchTree bTree){
+    /**
+     * Metodo para buscar la palabra a traducir dentro del arbol binario 
+     * @param userInput Arraylist de oracion ingresada por usuario 
+     * @param bTree Arbol de busqueda binaria elegida por usuario 
+     */
+    public void translateWord(ArrayList<String> userInput, BinarySearchTree bTree){
         String result = "";
 
         ArrayList<String> newUserInput = userInput; 
